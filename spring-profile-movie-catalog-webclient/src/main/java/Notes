@@ -1,0 +1,29 @@
+Notes:
+
+# Web Client
+
+1. An alternate way to call the other micro service just like RestTemplate
+2. Difference between the restTemplate and WebClient is that webclient can make
+both sync & async calls but restTemplate can make only sync calls
+
+# Plug-in
+# org.springframework.boot:spring-boot-starter-webflux
+- It allows reactive programming. It includes "WEB-CLIENT"
+
+# compileOnly 'org.projectlombok:lombok:1.18.18'
+# annotationProcessor 'org.projectlombok:lombok:1.18.18'
+- It allows lombok programming. It prevents basic model creation
+
+# org.springframework.cloud:spring-cloud-starter-netflix-eureka-client
+- It registers the current application in eureka server for discovering services
+- Application name needs to be mentioned in "application.properties" to reflect
+in discovery server
+
+# dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+- Includes the cloud dependencies w.r.t spring cloud version compatible with java version
+
+************************. Many more features needs to be explored

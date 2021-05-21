@@ -1,0 +1,24 @@
+Notes:
+
+1. RestTemplate is used for making call to another microservice
+
+# Annotation
+1. @EnableEurekaServer - Creates a discovery server where microserverices could
+be discovered depending on the registered client
+
+# Application Properties
+eureka.client.register-with-eureka=false
+- prevents registering the eureka server into another eureka registery
+eureka.client.fetch-registry=false
+- prevents pulling of the eureka registery on each load
+
+# Plug-in
+# org.springframework.cloud:spring-cloud-starter-netflix-eureka-server
+- It registers the current application in eureka server for discovering services
+
+# dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+- Includes the cloud dependencies w.r.t spring cloud version compatible with java version

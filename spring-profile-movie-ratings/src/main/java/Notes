@@ -1,0 +1,24 @@
+Notes:
+
+1. 
+
+
+# Plug-in
+# compileOnly 'org.projectlombok:lombok:1.18.18'
+# annotationProcessor 'org.projectlombok:lombok:1.18.18'
+- It allows lombok programming. It prevents basic model creation
+
+# org.springframework.cloud:spring-cloud-starter-netflix-eureka-client
+- It registers the current application in eureka server for discovering services
+- Application name needs to be mentioned in "application.properties" to reflect
+in discovery server
+
+# dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+- Includes the cloud dependencies w.r.t spring cloud version compatible with java version
+
+@ Deprecated : Earlier versions involved @EnableEurekaClient in all the application
+which needs to be marked as eureka client
